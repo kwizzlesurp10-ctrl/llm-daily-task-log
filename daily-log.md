@@ -24,6 +24,8 @@
 - **Reliability improvements**: Vision stable, describe + actions work correctly, Google guardrails active, bfcache recovery robust, 77 tests passing
 - **Artifacts**: Full detailed session notes (SESSION-2026-05-15.md), operational checklist, .env updates, vision smoke test script
 - **Productivity**: Major leap in OpenComet assistant quality and extension UX in one focused session
+- **Estimated tokens**: ~18,500
+- **Estimated cost**: ~$0.12 (mostly Grok + local Ollama)
 
 ### 🔍 Reflections & Learnings
 **What worked exceptionally well:**
@@ -60,6 +62,8 @@
 - **Productivity gain**: This single setup will save dozens of hours per year in manual journaling while enabling advanced analytics later.
 - **Artifacts created**: Live repo at https://github.com/kwizzlesurp10-ctrl/llm-daily-task-log with professional README + initial log entry.
 - **New techniques**: Direct tool integration for instant GitHub file management.
+- **Estimated tokens**: ~4,200
+- **Estimated cost**: ~$0.03
 
 ### 🔍 Reflections & Learnings
 **What worked exceptionally well:**
@@ -105,22 +109,24 @@
 
 ---
 
-## 📆 May 2026 Monthly Summary
+## 📆 May 2026 Monthly Summary (Auto-Generated)
 
-**Total LLM Time Logged:** ~5h 10m (as of May 15)
+**Total LLM Time Logged:** ~5h 10m across 2 sessions
 
 ### Key Highlights
-- **May 15**: Major OpenComet Browser Assistant v5.1.0 development session (vision migration to moondream, DOM actions, Google guardrails, bfcache fixes) + creation of this daily LLM task logging system
-- Strong productivity multiplier observed in focused technical pairing sessions
+- **May 15**: Major OpenComet Browser Assistant v5.1.0 development session (vision migration, DOM actions, Google guardrails, bfcache) + full daily LLM logging system creation
+- Strong productivity multiplier in focused technical pairing
+- Token/cost tracking fields now added to all templates
 
 ### Top Tags This Month
-#opencomet #browser-assistant #vision-model #extension-development #productivity #github-automation
+#opencomet #browser-assistant #vision-model #extension-development #productivity #github-automation #meta
 
 ### Monthly Goals Progress
 - [x] Establish reliable daily LLM logging habit
+- [x] Add token/cost tracking to templates
+- [x] Create GitHub Action for daily reminders
 - [ ] Continue OpenComet roadmap (Hugging Face provider, multi-tab research, memory layer)
-- [ ] Add automated monthly report generation
 
-**Next Month Focus (June 2026):** Deeper prompt pattern analysis, first automated monthly insights script, and continued OpenComet feature development
+**Next Month Focus (June 2026):** Deeper prompt pattern analysis, first automated monthly insights, continued OpenComet development
 
 ---
