@@ -24,75 +24,44 @@ I will instantly format it using the template, append it to the top of `daily-lo
 
 **Option 3 — Local (advanced):** Clone the repo, edit locally with your favorite editor, then `git push`.
 
-## 📋 Standardized Daily Entry Template
+## 📋 Standardized Templates
 
-Copy this block and fill it in. Consistency enables powerful future searches (e.g., "all coding tasks" or "prompts that used role-playing").
+Ready-to-copy templates are available in the `templates/` folder:
 
-```markdown
-## 📅 YYYY-MM-DD | Friday | Total LLM Time: 1h 20m
+- **`templates/daily-entry.md`** — For normal daily logging
+- **`templates/project-session.md`** — For deep technical/dev sessions (recommended for complex work)
+- **`templates/project-log.md`** — For creating new project-specific logs
 
-### 🎯 Tasks Completed
-- **Task 1**: [Short description of what you asked the LLM to do] | Model(s): Grok-4 / Claude-3.7 | Outcome: ✅ Success / ⚠️ Partial / ❌ Failed | Time: 35m
-- **Task 2**: ...
+Just copy the content inside the code block and paste into the appropriate file.
 
-### 💡 Key Prompts (Summarized — 1-2 sentences each)
-- "Write a professional cold-email sequence for SaaS founders..." (iterated 4 times with feedback)
-- "Analyze Q1 sales data and generate 5 visualization ideas..."
+## 🤖 Automation
 
-### 📈 Outcomes & Metrics
-- Productivity multiplier: ~3.2x vs doing manually
-- Artifacts produced: 2 polished emails, 1 dashboard mockup, 1 research summary
-- New techniques discovered: Tree-of-Thoughts + self-consistency
+**Monthly Summary Generator**
 
-### 🔍 Reflections & Learnings
-**What worked exceptionally well:**
-- 
-**What to improve next time:**
-- 
-**Follow-up actions / open items:**
-- 
+Run this script to automatically calculate total time, count sessions, and update the monthly summary section:
 
-### 🏷️ Tags
-#prompt-engineering #coding #research #content #personal-development
+```bash
+node scripts/generate-monthly-summary.js
 ```
 
-## 🧪 Project Session Template (for deep technical work)
-
-Use this for major development or research sessions:
-
-```markdown
-## 📅 YYYY-MM-DD | Friday | Total LLM Time: 3h 45m
-
-### 🎯 Tasks Completed
-- **Major Session**: [Project Name] vX.Y.Z — [focus areas] | Models: Grok + [local models] | Outcome: ✅ | Time: Xh Ym
-
-### 💡 Key Prompts (Summarized)
-- 
-
-### 📈 Outcomes & Metrics
-- Files touched: 
-- Reliability / capability improvements: 
-- Artifacts: 
-
-### 🔍 Reflections & Learnings
-**What worked exceptionally well:**
-- 
-**What to improve next time:**
-- 
-**Follow-up actions:**
-- 
-
-### 🏷️ Tags
-#project-name #specific-area
-```
+The script parses `daily-log.md`, extracts current-month entries, and refreshes the summary at the bottom.
 
 ## 📁 Repository Structure
 
-- `README.md` — This overview and instructions
-- `daily-log.md` — Master chronological log (all daily entries, newest first)
-- `projects/` — Dedicated project logs (e.g. `opencomet.md`)
-- `templates/` — Reusable templates (future)
-- (Future) Monthly archive files if daily-log grows very large
+```
+llm-daily-task-log/
+├── README.md
+├── daily-log.md                 # Master chronological log + monthly summaries
+├── projects/                    # Dedicated project logs
+│   ├── opencomet.md
+│   └── llm-productivity-system.md
+├── templates/                   # Ready-to-copy markdown templates
+│   ├── daily-entry.md
+│   ├── project-session.md
+│   └── project-log.md
+└── scripts/
+    └── generate-monthly-summary.js
+```
 
 ## ✨ Why This Setup is Powerful
 
@@ -100,7 +69,7 @@ Use this for major development or research sessions:
 - **Instant search** — GitHub's powerful code search works across every prompt you've ever written
 - **Private & secure** — Only you have access
 - **Portable** — Clone anywhere; integrate with Obsidian, Notion, or VS Code
-- **Analyzable** — Later we can add scripts to generate monthly reports, top prompt patterns, cost estimates, etc.
+- **Analyzable** — Scripts for monthly reports, top prompt patterns, cost estimates, etc.
 
 **Repository created:** May 15, 2026  
 **Maintained collaboratively by:** Elite Agent Agency (Grok) + Keith  
