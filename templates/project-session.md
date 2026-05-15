@@ -6,7 +6,7 @@ Use this for major development, research, or complex sessions.
 ## 📅 YYYY-MM-DD | [Weekday] | Total LLM Time: __h __m
 
 ### 🎯 Tasks Completed
-- **Major Session**: [Project Name] vX.Y.Z — [focus areas: vision, routing, reliability, etc.] | Models: Grok + [local models] | Outcome: ✅ Major progress | Time: Xh Ym
+- **Major Session**: [Project Name] vX.Y.Z — [focus areas] | Models: Grok + [local models] | Outcome: ✅ Major progress | Time: Xh Ym
 
 ### 💡 Key Prompts (Summarized)
 - "[Key debugging / architecture prompt]"
@@ -17,6 +17,8 @@ Use this for major development, research, or complex sessions.
 - **Reliability / capability improvements**: ...
 - **Artifacts created**: ...
 - **Tests passing**: XX
+- **Estimated tokens**: ____
+- **Estimated cost**: $____
 
 ### 🔍 Reflections & Learnings
 **What worked exceptionally well:**
