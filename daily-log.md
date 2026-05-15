@@ -102,3 +102,25 @@
 # 
 
 ---
+
+---
+
+## 📆 May 2026 Monthly Summary
+
+**Total LLM Time Logged:** ~5h 10m (as of May 15)
+
+### Key Highlights
+- **May 15**: Major OpenComet Browser Assistant v5.1.0 development session (vision migration to moondream, DOM actions, Google guardrails, bfcache fixes) + creation of this daily LLM task logging system
+- Strong productivity multiplier observed in focused technical pairing sessions
+
+### Top Tags This Month
+#opencomet #browser-assistant #vision-model #extension-development #productivity #github-automation
+
+### Monthly Goals Progress
+- [x] Establish reliable daily LLM logging habit
+- [ ] Continue OpenComet roadmap (Hugging Face provider, multi-tab research, memory layer)
+- [ ] Add automated monthly report generation
+
+**Next Month Focus (June 2026):** Deeper prompt pattern analysis, first automated monthly insights script, and continued OpenComet feature development
+
+---
