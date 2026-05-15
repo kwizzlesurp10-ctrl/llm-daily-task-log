@@ -16,6 +16,8 @@ Copy and fill this in when logging a normal day.
 - Productivity multiplier: ~X.Xx vs manual
 - Artifacts created: ...
 - New techniques discovered: ...
+- **Estimated tokens**: ____
+- **Estimated cost**: $____ (model pricing)
 
 ### 🔍 Reflections & Learnings
 **What worked exceptionally well:**
