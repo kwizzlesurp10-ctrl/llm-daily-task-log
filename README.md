@@ -56,17 +56,50 @@ Copy this block and fill it in. Consistency enables powerful future searches (e.
 #prompt-engineering #coding #research #content #personal-development
 ```
 
+## 🧪 Project Session Template (for deep technical work)
+
+Use this for major development or research sessions:
+
+```markdown
+## 📅 YYYY-MM-DD | Friday | Total LLM Time: 3h 45m
+
+### 🎯 Tasks Completed
+- **Major Session**: [Project Name] vX.Y.Z — [focus areas] | Models: Grok + [local models] | Outcome: ✅ | Time: Xh Ym
+
+### 💡 Key Prompts (Summarized)
+- 
+
+### 📈 Outcomes & Metrics
+- Files touched: 
+- Reliability / capability improvements: 
+- Artifacts: 
+
+### 🔍 Reflections & Learnings
+**What worked exceptionally well:**
+- 
+**What to improve next time:**
+- 
+**Follow-up actions:**
+- 
+
+### 🏷️ Tags
+#project-name #specific-area
+```
+
 ## 📁 Repository Structure
-- `README.md` — This overview and instructions  
-- `daily-log.md` — Master log (all daily entries, newest first — grows over time)  
-- (Future) Monthly archives (`2026-06.md`, etc.) if the single file becomes too large  
-- (Optional) GitHub Actions for daily reminder issues or automated summaries
+
+- `README.md` — This overview and instructions
+- `daily-log.md` — Master chronological log (all daily entries, newest first)
+- `projects/` — Dedicated project logs (e.g. `opencomet.md`)
+- `templates/` — Reusable templates (future)
+- (Future) Monthly archive files if daily-log grows very large
 
 ## ✨ Why This Setup is Powerful
-- **Full Git history** — See exactly how your prompting evolved over months  
-- **Instant search** — GitHub's powerful code search works across every prompt you've ever written  
-- **Private & secure** — Only you have access  
-- **Portable** — Clone anywhere; integrate with Obsidian, Notion, or VS Code  
+
+- **Full Git history** — See exactly how your prompting evolved over months
+- **Instant search** — GitHub's powerful code search works across every prompt you've ever written
+- **Private & secure** — Only you have access
+- **Portable** — Clone anywhere; integrate with Obsidian, Notion, or VS Code
 - **Analyzable** — Later we can add scripts to generate monthly reports, top prompt patterns, cost estimates, etc.
 
 **Repository created:** May 15, 2026  
