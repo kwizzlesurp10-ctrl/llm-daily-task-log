@@ -16,11 +16,12 @@ At the end of each day or after a major LLM session, simply tell me:
 
 I will instantly format it using the template, append it to the top of `daily-log.md`, and commit the update. Zero friction.
 
-**Option 2 — GitHub Web / Mobile App:**  
-1. Open https://github.com/kwizzlesurp10-ctrl/llm-daily-task-log  
-2. Edit `daily-log.md`  
-3. Paste new entry **at the very top** (reverse chronological order)  
-4. Commit with clear message e.g. "Add 2026-05-16 log"
+**Option 2 — GitHub Web / Mobile App (Recommended for structured input):**  
+1. Go to the **Issues** tab
+2. Click **New issue**
+3. Select the **"Daily LLM Log"** template
+4. Fill out the form
+5. Submit the issue, then copy the formatted content into the top of `daily-log.md` (or reply here and I can help commit it)
 
 **Option 3 — Local (advanced):** Clone the repo, edit locally with your favorite editor, then `git push`.
 
@@ -34,23 +35,30 @@ Ready-to-copy templates are available in the `templates/` folder:
 
 Just copy the content inside the code block and paste into the appropriate file.
 
+> **New:** You can also use the native GitHub Issue Template (`.github/ISSUE_TEMPLATE/daily-llm-log.yml`) for a guided form experience when creating issues.
+
 ## 🤖 Automation
 
 **Monthly Summary Generator**
 
-Run this script to automatically calculate total time, count sessions, and update the monthly summary section:
+Run this to automatically calculate total LLM time, session count, and refresh the monthly summary section at the bottom of `daily-log.md`:
 
 ```bash
+# Using npm (recommended after first clone)
+npm run summary
+
+# Or directly with node
 node scripts/generate-monthly-summary.js
 ```
 
-The script parses `daily-log.md`, extracts current-month entries, and refreshes the summary at the bottom.
+The script now features **more robust time parsing** (handles variations like "2h 30m", "2.5h", "90m") and better error handling.
 
 ## 📁 Repository Structure
 
 ```
 llm-daily-task-log/
 ├── README.md
+├── package.json                 # npm scripts + metadata
 ├── daily-log.md                 # Master chronological log + monthly summaries
 ├── projects/                    # Dedicated project logs
 │   ├── opencomet.md
@@ -59,6 +67,11 @@ llm-daily-task-log/
 │   ├── daily-entry.md
 │   ├── project-session.md
 │   └── project-log.md
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   └── daily-llm-log.yml   # Native GitHub form template for daily logs
+│   └── workflows/
+│       └── daily-log-reminder.yml
 └── scripts/
     └── generate-monthly-summary.js
 ```
@@ -70,6 +83,7 @@ llm-daily-task-log/
 - **Private & secure** — Only you have access
 - **Portable** — Clone anywhere; integrate with Obsidian, Notion, or VS Code
 - **Analyzable** — Scripts for monthly reports, top prompt patterns, cost estimates, etc.
+- **Low friction daily nudges** via scheduled GitHub Issues + beautiful form templates
 
 **Repository created:** May 15, 2026  
 **Maintained collaboratively by:** Elite Agent Agency (Grok) + Keith  
