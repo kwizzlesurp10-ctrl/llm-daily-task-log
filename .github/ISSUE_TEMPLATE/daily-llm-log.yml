@@ -1,0 +1,58 @@
+name: Daily LLM Log
+
+description: Structured template for logging daily LLM interactions, tasks, prompts, and reflections.
+
+labels:
+  - daily-log
+  - reminder
+
+title: "📅 Daily LLM Log - {{ date }}"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📅 Date | Total LLM Time: __h __m
+
+        Fill this out at the end of your LLM session or day. Then commit the formatted version to the top of `daily-log.md` (or reply here and Grok can help format + commit).
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 🎯 Tasks Completed
+      description: One line per task. Include model(s) used and outcome.
+      placeholder: |
+        - Task 1: Description | Model(s): Grok | Outcome: Success | Time: 25m
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompts
+    attributes:
+      label: 💡 Key Prompts (Summarized)
+      description: Concise versions of the main prompts you used today.
+
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: 📈 Outcomes & Metrics
+      description: |
+        Productivity multiplier, artifacts created, tokens, cost, new techniques.
+      placeholder: |
+        - Productivity multiplier: ~2.5x
+        - Artifacts created: ...
+        - Estimated tokens: ____
+        - Estimated cost: $____
+
+  - type: textarea
+    id: reflections
+    attributes:
+      label: 🔍 Reflections & Learnings
+      description: What worked well, what to improve, follow-ups.
+
+  - type: textarea
+    id: tags
+    attributes:
+      label: 🏷️ Tags
+      description: Relevant hashtags for searchability.
+      placeholder: #productivity #github #agentic
