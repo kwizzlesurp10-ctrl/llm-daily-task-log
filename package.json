@@ -4,7 +4,8 @@
   "description": "Personal LLM interaction journal, templates, and monthly analytics automation.",
   "main": "scripts/generate-monthly-summary.js",
   "scripts": {
-    "summary": "node scripts/generate-monthly-summary.js"
+    "summary": "node scripts/generate-monthly-summary.js",
+    "test": "node --test tests/"
   },
   "keywords": ["llm", "productivity", "journal", "prompt-engineering", "personal-knowledge-management"],
   "author": "Keith Severson <kwizzlesurp10@gmail.com>",
