@@ -3,19 +3,22 @@ const path = require('path');
 
 /**
  * Robust Monthly Summary Generator for LLM Daily Task Log
- * Run with: node scripts/generate-monthly-summary.js
  * 
- * Improvements:
- * - More flexible time parsing (handles "2h 30m", "2.5h", "90m", etc.)
- * - Defensive parsing with warnings instead of silent failure
- * - Better structure and comments
+ * Run with:
+ *   npm run summary
+ *   or
+ *   node scripts/generate-monthly-summary.js
+ * 
+ * Refinements:
+ * - Flexible time parsing ("2h 30m", "2.5h", "90m", etc.)
+ * - Warnings instead of silent failures
+ * - Prepared for future model/tag analytics extraction
  */
 
 function parseTimeToMinutes(timeStr) {
   if (!timeStr) return 0;
   const str = timeStr.toLowerCase().trim();
 
-  // Match patterns like "2h 30m", "2.5h", "90m", "2h", "1h30m"
   const hourMinMatch = str.match(/(\d+(?:\.\d+)?)h\s*(\d+)?m?/);
   if (hourMinMatch) {
     const hours = parseFloat(hourMinMatch[1]) || 0;
@@ -23,7 +26,6 @@ function parseTimeToMinutes(timeStr) {
     return Math.round(hours * 60 + minutes);
   }
 
-  // Match pure minutes e.g. "90m" or "90"
   const minMatch = str.match(/(\d+)m?/);
   if (minMatch) {
     return parseInt(minMatch[1]) || 0;
@@ -43,10 +45,9 @@ function generateMonthlySummary() {
   let content = fs.readFileSync(logPath, 'utf8');
 
   const now = new Date();
-  const currentMonth = now.toISOString().slice(0, 7); // e.g. "2026-05"
+  const currentMonth = now.toISOString().slice(0, 7);
   const monthName = now.toLocaleString('default', { month: 'long', year: 'numeric' });
 
-  // Split into potential daily entries (more robust than single regex on whole file)
   const entryRegex = /## 📅 (\d{4}-\d{2}-\d{2})[^\n]*Total LLM Time:\s*([^\n]+)/g;
   let match;
   let totalMinutes = 0;
@@ -70,7 +71,7 @@ function generateMonthlySummary() {
   const remainingMinutes = totalMinutes % 60;
   const timeString = `${totalHours}h ${remainingMinutes}m`;
 
-  // Build improved monthly summary
+  // Future enhancement hook: extract most-used models and tags here
   const summary = `
 ---
 
@@ -95,11 +96,9 @@ function generateMonthlySummary() {
 ---
 `;
 
-  // Remove previous monthly summary section if present
   const oldSummaryRegex = /---\n\n## 📆 .*? Monthly Summary[\s\S]*?---/;
   content = content.replace(oldSummaryRegex, '');
 
-  // Append new summary
   const newContent = content.trim() + '\n' + summary;
 
   fs.writeFileSync(logPath, newContent, 'utf8');

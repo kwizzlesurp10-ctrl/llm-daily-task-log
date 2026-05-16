@@ -2,9 +2,10 @@ name: Daily LLM Log Reminder
 
 on:
   schedule:
-    # Runs every day at 20:00 UTC (adjust timezone as needed)
+    # Runs every day at 20:00 UTC.
+    # Minneapolis (CDT) users: ~3:00 PM local time. Adjust cron as preferred.
     - cron: '0 20 * * *'
-  workflow_dispatch:   # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   create-reminder:
@@ -19,6 +20,8 @@ jobs:
             const date = new Date().toISOString().split('T')[0];
             const title = `Daily LLM Log - ${date}`;
             
+            // The body below is a quick template. For a better guided experience,
+            // use the "Daily LLM Log" issue template from .github/ISSUE_TEMPLATE/
             const body = `## 📅 ${date} | [Weekday] | Total LLM Time: __h __m
 
 ### 🎯 Tasks Completed
@@ -46,7 +49,10 @@ jobs:
 
 ---
 
-**Instructions:** Fill this out and close the issue when done. Or reply here and I'll format + commit it for you.`;
+**Instructions:** Fill this out and close the issue when done.
+You can also create issues using the **Daily LLM Log** template in the Issues tab for a structured form.
+
+> Pro tip: Tell Grok "Log today's tasks" for the easiest workflow.`;
 
             await github.rest.issues.create({
               owner: context.repo.owner,
