@@ -6,6 +6,48 @@
 
 ---
 
+## 📅 2026-05-17 | Sunday | Total LLM Time: ~3h 30m
+
+### 🎯 Tasks Completed
+- **Major Dev Session**: **camp** — Northern Teenage Summer Camp Staff persona explorer (Next.js 16 + Tailwind v4) | Models: Cursor (Composer), Claude Code | Outcome: ✅ Shipped interactive app, agent API, print training guide, deep links; pushed to private GitHub | Time: ~3h 30m
+- **Bug fix**: Controlled `<details>` cluster accordion — `Cannot read properties of null (reading 'open')` | Outcome: ✅ Fixed summary click toggle
+- **Security**: Postcss override `>=8.5.14` for moderate XSS advisory in Next.js bundle | Outcome: ✅ Committed
+- **Meta**: Dark mode via class-based Tailwind v4 `dark` variant | Outcome: ✅ Committed
+
+### 💡 Key Prompts (Summarized)
+- Transform static HTML persona DOM tree into interactive UI landing page
+- Add deep-link URLs per persona, printable staff-training PDF view, JSON API route for agent orchestration
+- Fix runtime TypeError on cluster expand/collapse
+- Commit today's work → `llm-daily-task-log` + `camp` repo push
+
+### 📈 Outcomes & Metrics
+- **Repo**: https://github.com/kwizzlesurp10-ctrl/camp (private, `master` synced)
+- **Routes**: `/`, `/training/print`, `/api/personas`, `/api/personas/[id]`
+- **Features**: 12 personas × 4 clusters, search/filter, compare bar, detail slide-over, copy agent JSON, share deep links
+- **Tests**: 16 passing (Vitest)
+- **Files in main feature commit**: 30 files, ~2,876 insertions
+- **Estimated tokens**: ~45,000
+- **Estimated cost**: ~$0.25
+
+### 🔍 Reflections & Learnings
+**What worked exceptionally well:**
+- Structured persona data + Zod-validated API/filters keeps UI and agents in sync
+- Print view via browser PDF avoids heavy PDF dependencies
+- Deep links (`?persona=`) make training shareable per archetype
+
+**What to improve next time:**
+- Avoid reading `event.currentTarget` inside React `setState` updaters (event is nullified)
+- Commit feature slices incrementally instead of one mega-commit
+
+**Follow-up actions:**
+- Optional: `?compare=id1,id2` deep links for staff mix
+- Remove postcss override when Next.js 16.3.0+ ships with patched dependency
+
+### 🏷️ Tags
+#camp #nextjs #personas #agent-orchestration #staff-training #api #deep-links #tailwind-v4
+
+---
+
 ## 📅 2026-05-16 | Saturday (Evening) | Total LLM Time: ~35m
 
 ### 🎯 Tasks Completed
@@ -202,5 +244,27 @@
 - [ ] Continue OpenComet roadmap (Hugging Face provider, multi-tab research, memory layer)
 
 **Next Month Focus (June 2026):** Deeper prompt pattern analysis, first automated monthly insights, continued OpenComet development
+
+---
+
+---
+
+## 📆 May 2026 Monthly Summary
+
+**Total LLM Time Logged:** 10h 30m (5 sessions logged)
+
+### Key Highlights
+- 5 sessions recorded this month
+- Strong focus on technical development, agentic systems, and productivity tooling
+
+### Top Tags This Month
+#productivity #github #templates #agentic #llm
+
+### Monthly Goals Progress
+- [x] Establish reliable daily LLM logging habit
+- [ ] Add token/cost tracking
+- [ ] Build automated insights & visualizations
+
+**Next Month Focus:** Deeper analytics, prompt pattern mining, and integration with Local AI Integrations workflows
 
 ---
